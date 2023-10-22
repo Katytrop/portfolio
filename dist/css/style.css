@@ -138,6 +138,7 @@ body {
   font-family: Raleway;
   font-size: 16px;
   color: #cdc6c3;
+  background-image: url(../img/bg.webp);
   background-size: 50px;
   overflow-x: hidden;
 }
@@ -338,6 +339,7 @@ body {
   height: 90%;
   top: 5%;
   left: 3.3%;
+  background-image: url(../img/bg.webp);
   background-size: 50px;
   border-radius: 12px;
 }
