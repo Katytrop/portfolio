@@ -1,0 +1,34 @@
+.mainscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: flex-end;
+    &__body {
+        margin-bottom: 30px;
+        //@include adaptiv-value('margin-bottom', 30, 10, 1);  
+    }
+    &__img {
+        width: auto;
+        height: clamp(35vh, 100vw, 100vh); 
+        position: absolute;
+        right: 0;
+        top: -15px;
+        z-index: -1;
+        filter: drop-shadow(5px 0px 20px #fafafa); 
+        //transform: none !important;
+        @media (min-width: $md4+px)  { 
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__title {
+        width: min-content;
+        line-height: .9;
+        @include adaptiv-value('font-size', 170, 65, 1);
+        @media (min-width: $md2+px)  {
+            align-self: self-end;
+        }
+    }
+}

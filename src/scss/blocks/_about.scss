@@ -1,0 +1,22 @@
+.about {
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        @media (max-width: $md3+px)  {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        text-align: center;
+    }
+    &__title {
+        @include adaptiv-value('font-size', 50, 36, 1);
+    }
+    &__subtitle {
+        @include adaptiv-value('font-size', 30, 24, 1);
+    }
+}
