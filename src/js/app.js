@@ -32,19 +32,20 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
         { 
             opacity: 1,
             x: 0,
+            y: 0,
             rotation: 0
         }, {
 		opacity: 0,
-        x: 500, 
+        x: 500,
+        y: 0, 
         rotation: 45,
 		scrollTrigger: {
 			trigger: '.mainscreen',
-			start: 'top top',
+			start: '20px top',
 			end: '=+700',
 			scrub: true,
-            //markers: true,
+            markers: true,
 		},
-        immediateRender: false,
 	})
 
     // движение блоков секции скилов
