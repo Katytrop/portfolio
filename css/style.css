@@ -136,6 +136,7 @@ body {
   font-family: "Gilroy";
   font-size: 18px;
   color: #fafafa;
+  overflow-x: hidden;
 }
 
 .no-webp .wrapper {
