@@ -59,7 +59,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
                 start: 'top 300px',
                 end: '=+300',
                 scrub: true,
-                markers: true,
             },
         })
 
