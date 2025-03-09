@@ -25,28 +25,44 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 			end: '800',
 			scrub: true
 		},
-        immediateRender: false,
 	})
 
-    gsap.fromTo('.mainscreen__img', 
-        { 
-            opacity: 1,
-            x: 0,
-            y: 0,
-            rotation: 0
-        }, {
+    gsap.fromTo('.mainscreen__img', { 
+        opacity: 1,
+        x: 0,
+        rotation: 0,
+    }, {
 		opacity: 0,
         x: 500,
-        y: 0, 
         rotation: 45,
 		scrollTrigger: {
 			trigger: '.mainscreen',
-			start: '20px top',
+			start: 'top top',
 			end: '=+700',
 			scrub: true,
-            markers: true,
+            //markers: true,
 		},
+        immediateRender: false,
 	})
+
+    //секция about
+    gsap.fromTo('.about__content', 
+        { 
+            opacity: 0,
+            y: -300, 
+
+        }, {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top 300px',
+                end: '=+300',
+                scrub: true,
+                markers: true,
+            },
+        })
+
 
     // движение блоков секции скилов
     const moveBlocks = () => {

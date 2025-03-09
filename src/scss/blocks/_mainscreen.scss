@@ -12,12 +12,11 @@
         height: clamp(35vh, 100vw, 100vh); 
         position: absolute;
         right: 0;
-        top: 0;
+        top: -15px;
         z-index: -1;
         filter: drop-shadow(5px 0px 20px #fafafa); 
-        @media (max-width: $md3+px)  { 
-            @include adaptiv-value('top', -50, -100, 1);
-            
+        //transform: none !important;
+        @media (min-width: $md4+px)  { 
         }
         img {
             width: 100%;

@@ -2,8 +2,9 @@
     position: relative;
     overflow: hidden;
     @media (max-width: $md3+px)  {
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: flex-start;
+        gap: 30px;
     }
     &__divider {
         position: absolute;
