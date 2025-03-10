@@ -17,6 +17,68 @@ if (ScrollTrigger.isTouch !== 1) {
 		effects: true
 	})
 
+    gsap.fromTo('.mainscreen__img', { 
+        opacity: 1,
+        x: 0,
+        y: 0,
+        rotation: 0,
+        transformOrigin: 'bottom center',
+    }, {
+        opacity: 0,
+        x: 500,
+        y: 0,
+        rotation: 45,
+        scrollTrigger: {
+            trigger: '.mainscreen',
+            start: 'top top',
+            end: '=+700',
+            scrub: true,
+            //markers: true,
+        },
+        immediateRender: false,
+    })
+     
+    // движение блоков секции скилов
+    const moveBlocks = () => {
+        const image = document.querySelector(".skills__right img");
+        const imageWrapper = document.querySelector(".skills__right");
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".skills",
+                start: "top top",
+                pin: true, 
+                end: "+=1500",
+                scrub: true,
+                //markers: true,
+            }
+        });
+
+        tl
+        .to(
+            imageWrapper, 
+            { xPercent: 40, duration: 20}, 0
+        )
+        .to(
+            image, 
+            { xPercent: -25, duration: 20 }, 0
+        )
+        .to(
+            ".skills__box_1",
+            { yPercent: 100, duration: 10 }, 20
+        )
+        .to(
+            ".skills__box_2",
+            { xPercent: -100, duration: 10 }, 30
+        )
+
+        return tl;
+    };
+
+
+    if (window.innerWidth > 767.98) {
+        moveBlocks();
+    }
+
 }
 
 
@@ -31,23 +93,7 @@ gsap.fromTo('.mainscreen__body', { opacity: 1 }, {
     },
 })
 
-gsap.fromTo('.mainscreen__img', { 
-    opacity: 1,
-    x: 0,
-    rotation: 0,
-}, {
-    opacity: 0,
-    x: 500,
-    rotation: 45,
-    scrollTrigger: {
-        trigger: '.mainscreen',
-        start: 'top top',
-        end: '=+700',
-        scrub: true,
-        //markers: true,
-    },
-    immediateRender: false,
-})
+
 
 //секция about
 gsap.fromTo('.about__content', 
@@ -66,50 +112,6 @@ gsap.fromTo('.about__content',
         },
     })
 
-
-// движение блоков секции скилов
-const moveBlocks = () => {
-    const image = document.querySelector(".skills__right img");
-    const imageWrapper = document.querySelector(".skills__right");
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".skills",
-            start: "top top",
-            pin: true, 
-            end: "+=1500",
-            scrub: true,
-            //markers: true,
-        }
-    });
-
-    tl
-    .to(
-        imageWrapper, 
-        { xPercent: 40, duration: 20}, 0
-    )
-    .to(
-        image, 
-        { xPercent: -25, duration: 20 }, 0
-    )
-    .to(
-        ".skills__box_1",
-        { yPercent: 100, duration: 10 }, 20
-    )
-    .to(
-        ".skills__box_2",
-        { xPercent: -100, duration: 10 }, 30
-    )
-
-    return tl;
-};
-
-
-if (window.innerWidth > 767.98) {
-    moveBlocks();
-}
-
-// const master = gsap.timeline();
-// master.add(moveBlocks(".skills__right"));
 
 // фон-космос
 const bg = document.querySelector('#bg');
